@@ -6,7 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-input("Digite a mensagem de texto a ser publicada no seu Linkedin: ")
+message_to_post = input("Digite a mensagem de texto a ser publicada no seu Linkedin: ")
 
 load_dotenv("D:\EnvironmentVariables\.env")
 
@@ -35,7 +35,7 @@ time.sleep(4)
 
 text_field = driver.find_element(By.CSS_SELECTOR, ".ql-container p")
 text_field .click()
-text_field .send_keys("Desenvolvedor de Software")
+text_field .send_keys(message_to_post)
 time.sleep(4)
 
 post_button = driver.find_element(By.CSS_SELECTOR, ".share-box_actions span")
